@@ -164,11 +164,6 @@ if __name__ == '__main__':
     #     time.sleep(0.2)
     # print('yo')
 
-    # "087-16-4919", "087-16-7462", "087-16-9980"
-    # "087-16-2099", "087-16-2168"
-    # ["087-16-4919", "087-16-7462", "087-16-9397", "087-16-9980"]
-    # "087-16-7462", "087-16-9017", "087-16-8945", "087-16-9921", "087-16-4893"
-
     read_config = configparser.ConfigParser()
     read_config.read('private.ini')
     CHROME_PATH = read_config.get('DRIVER_PATH', 'PATH')
@@ -185,7 +180,7 @@ if __name__ == '__main__':
 
     buy_instance = Target(username, password, dcpi_list, CHROME_PATH)
 
-    schedule.every(6).seconds.do(lambda: buy_instance.run())
+    schedule.every(5).seconds.do(lambda: buy_instance.run())
 
 
     while True:
